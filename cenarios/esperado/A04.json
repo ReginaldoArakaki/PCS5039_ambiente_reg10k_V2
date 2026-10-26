@@ -1,0 +1,62 @@
+{
+  "cenario": "A04",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RN09",
+    "RF-OPR-01"
+  ],
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "morador sempre na sala",
+      "quando": "o cenário corre",
+      "entao": {
+        "tipo": "luz_constante",
+        "comodo": "sala",
+        "valor": "ACESA",
+        "entre_ms": [
+          6000,
+          270000
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "quarto acendido sem ninguém",
+      "quando": "passa T_apagamento",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "quarto",
+        "valor": "APAGADA",
+        "apos": {
+          "evento": "ESPIOU"
+        },
+        "em_ms": 75000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "CARACTERIZACAO",
+      "dado": "quarto vazio",
+      "quando": "o SA da PORTA-02 dispara",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "quarto",
+        "nome": "desperdicio_s",
+        "min": 55
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

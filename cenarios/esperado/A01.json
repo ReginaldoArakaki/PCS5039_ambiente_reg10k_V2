@@ -1,0 +1,63 @@
+{
+  "cenario": "A01",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "morador parado no banho",
+      "quando": "4 min sem movimento",
+      "entao": {
+        "tipo": "luz_constante",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA"
+        },
+        "entre_ms": [
+          1000,
+          240000
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "banheiro com T_apagamento de 5 min",
+      "quando": "o morador deixa o banheiro",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "banheiro",
+        "nome": "desperdicio_por_saida_s_max",
+        "max": 330
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "CARACTERIZACAO",
+      "dado": "parâmetro por cômodo",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "banheiro",
+        "nome": "escuro_com_ocupante_s",
+        "max": 1
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "cenario": "G02-banheiro",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "L1",
+      "nivel": "REQUISITO",
+      "dado": "Banheiro escuro",
+      "quando": "alguém entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 1
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

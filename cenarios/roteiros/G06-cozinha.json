@@ -1,0 +1,44 @@
+{
+  "id": "G06-cozinha",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Comando remoto acende cozinha",
+  "tipo": "GEMEO_DIGITAL",
+  "modo": "IDEAL",
+  "duracao_ms": 200000,
+  "descricao": "Com a casa vazia, o titular acende cozinha pelo app.",
+  "comportamento_ideal": "Só o cômodo pedido acende, em até 3 s, com efeito observado.",
+  "comportamento_referencia": "Validade de 30 s, chave de idempotência e precedência remota (RN-DT-09).",
+  "requisitos": [
+    "RF-OPR-03",
+    "RF-OPR-04",
+    "RNF-DES-02",
+    "CF04"
+  ],
+  "regras": [
+    "RN-DT-05",
+    "RN-DT-09",
+    "RN-V1-03"
+  ],
+  "familia": "F6",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 70000,
+      "ocupante": "app",
+      "acao": "APP_COMANDO",
+      "comando": "ACENDER",
+      "comodo": "cozinha"
+    },
+    {
+      "t_ms": 75000,
+      "ocupante": "app",
+      "acao": "APP_CONSULTA"
+    }
+  ],
+  "falhas": []
+}

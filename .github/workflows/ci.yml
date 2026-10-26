@@ -1,0 +1,32 @@
+name: versao
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  catalogo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Dependências do núcleo
+        run: pip install -r nucleo/requirements.txt
+      - name: Validação dos JSON da versão
+        run: python nucleo/reg10k.py validar
+      - name: Regressão por assinatura (se houver dados/assinaturas-V2.json)
+        run: if [ -f dados/assinaturas-V2.json ]; then python nucleo/reg10k.py assinaturas comparar V2; fi
+      - name: Catálogo e página
+        run: python nucleo/reg10k.py catalogo --sementes 30
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: pagina-e-catalogo-V2
+          path: |
+            site/index.html
+            saida/catalogo.json

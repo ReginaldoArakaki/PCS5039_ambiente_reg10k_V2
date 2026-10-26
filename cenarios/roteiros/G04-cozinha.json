@@ -1,0 +1,52 @@
+{
+  "id": "G04-cozinha",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "SP de cozinha para de responder",
+  "tipo": "FALHA",
+  "modo": "IDEAL",
+  "duracao_ms": 272000,
+  "descricao": "O morador está em cozinha quando o SP dali para de responder.",
+  "comportamento_ideal": "O sistema sinaliza a falha e não apaga por silêncio.",
+  "comportamento_referencia": "Alerta SP_SEM_RESPOSTA; ocupação desconhecida; a luz fica como está (RN-I0-04).",
+  "requisitos": [
+    "RF-OPR-09",
+    "CV03",
+    "CF05"
+  ],
+  "regras": [
+    "RN-I0-04"
+  ],
+  "familia": "F4",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "cozinha"
+    },
+    {
+      "t_ms": 40000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 200000
+    }
+  ],
+  "falhas": [
+    {
+      "t_ms": 40000,
+      "tipo": "SP_SEM_RESPOSTA",
+      "dispositivo": "SP-02"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "modo": "IDEAL",
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "falhas": [
+    {
+      "t_ms": 60000,
+      "tipo": "CANAL_DESCONECTA",
+      "duracao_ms": 300000
+    }
+  ],
+  "id": "A05",
+  "titulo": "Desconexão com a casa ocupada em dois cômodos",
+  "tipo": "GEMEO_DIGITAL",
+  "duracao_ms": 600000,
+  "descricao": "O morador fica no quarto e o Rex na cozinha quando o canal cai por 5 min.",
+  "comportamento_ideal": "A automação local segue; o gêmeo de cada cômodo se declara desatualizado e reconcilia ao voltar.",
+  "comportamento_referencia": "Fila persistente; um estado por cômodo; reconciliação em até 5 s.",
+  "requisitos": [
+    "RF-SYN-03",
+    "RF-SYN-04",
+    "RNF-CON-01",
+    "CF06"
+  ],
+  "regras": [
+    "RN-DT-03",
+    "RN-DT-04",
+    "RN-V1-04"
+  ],
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "rex",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 10000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 12000,
+      "ocupante": "rex",
+      "acao": "MUDAR_COMODO",
+      "para": "cozinha"
+    },
+    {
+      "t_ms": 24000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 576000
+    },
+    {
+      "t_ms": 26000,
+      "ocupante": "rex",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 574000
+    }
+  ]
+}

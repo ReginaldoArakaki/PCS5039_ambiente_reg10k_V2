@@ -1,0 +1,53 @@
+{
+  "id": "G02-cozinha",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Fica parado em cozinha por 5 min",
+  "tipo": "FALSO_NEGATIVO",
+  "modo": "IDEAL",
+  "duracao_ms": 328000,
+  "descricao": "O morador vai até cozinha e fica parado; o PIR não o vê.",
+  "comportamento_ideal": "A luz fica acesa enquanto ele está lá.",
+  "comportamento_referencia": "Limitação conhecida: apaga T_apagamento (60 s) depois da última evidência.",
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "regras": [
+    "RN-I0-03"
+  ],
+  "familia": "F2",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "cozinha"
+    },
+    {
+      "t_ms": 20000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        6.75,
+        2.0
+      ]
+    },
+    {
+      "t_ms": 28000,
+      "ocupante": "morador",
+      "acao": "PARADO"
+    }
+  ],
+  "falhas": []
+}

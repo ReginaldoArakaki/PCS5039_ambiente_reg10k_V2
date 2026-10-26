@@ -1,0 +1,3 @@
+[submodule "nucleo"]
+	path = nucleo
+	url = https://github.com/ReginaldoArakaki/PCS5039_ambiente_reg10k_vCl0

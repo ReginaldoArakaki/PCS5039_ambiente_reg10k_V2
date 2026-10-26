@@ -1,0 +1,65 @@
+{
+  "cenario": "A02",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "banheiro escuro",
+      "quando": "o morador entra pela porta da suíte",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA"
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "quarto escuro",
+      "quando": "o morador volta do banheiro",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "quarto",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 2
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "CARACTERIZACAO",
+      "dado": "morador deitado no quarto",
+      "quando": "60 s sem movimento",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "quarto",
+        "nome": "apagamentos_indevidos",
+        "min": 1
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "G03-PORTA-03",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Espia banheiro pela PORTA-03 sem entrar",
+  "tipo": "FALSO_POSITIVO",
+  "modo": "IDEAL",
+  "duracao_ms": 209000,
+  "descricao": "O morador vai até a PORTA-03, olha banheiro sem entrar e volta.",
+  "comportamento_ideal": "Banheiro não acende: ninguém entrou.",
+  "comportamento_referencia": "Limitação conhecida (RN-V1-01): o SA da passagem vai aos dois cômodos e banheiro acende.",
+  "requisitos": [
+    "RN09",
+    "RF-OPR-01"
+  ],
+  "regras": [
+    "RN-V1-01"
+  ],
+  "familia": "F3",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 20000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        4.6,
+        5.65
+      ]
+    },
+    {
+      "t_ms": 30000,
+      "ocupante": "morador",
+      "acao": "ESPIAR",
+      "comodo": "banheiro"
+    },
+    {
+      "t_ms": 35000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 60000
+    },
+    {
+      "t_ms": 97000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "sala"
+    },
+    {
+      "t_ms": 109000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        0.4
+      ]
+    },
+    {
+      "t_ms": 117000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ],
+  "falhas": []
+}

@@ -1,0 +1,91 @@
+{
+  "cenario": "A03",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "RNF-DES-03"
+  ],
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "sala escuro",
+      "quando": "o morador entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "sala",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA"
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "quarto escuro",
+      "quando": "o morador entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "quarto",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA"
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "REQUISITO",
+      "dado": "banheiro escuro",
+      "quando": "o morador entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA"
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "A4",
+      "nivel": "REQUISITO",
+      "dado": "entrada em cômodo escuro",
+      "quando": "a lâmpada acende",
+      "entao": {
+        "tipo": "metrica",
+        "nome": "atraso_percebido_ms_max",
+        "max": 1000
+      }
+    },
+    {
+      "id": "A5",
+      "nivel": "REQUISITO",
+      "dado": "casa vazia",
+      "quando": "5 min e meio depois da saída",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "banheiro",
+        "valor": "APAGADA",
+        "em_ms": 462000
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

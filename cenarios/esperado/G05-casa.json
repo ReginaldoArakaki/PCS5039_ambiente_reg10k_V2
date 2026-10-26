@@ -1,0 +1,58 @@
+{
+  "cenario": "G05-casa",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-SYN-03",
+    "RF-SYN-04",
+    "RNF-CON-01",
+    "CF06"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "canal caído",
+      "quando": "logo depois da queda",
+      "entao": {
+        "tipo": "gemeo",
+        "comodo": "sala",
+        "em_ms": 61000,
+        "atualidade": "DESATUALIZADO",
+        "conexao": "DESCONECTADO"
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "canal volta",
+      "quando": "o hub reconcilia",
+      "entao": {
+        "tipo": "metrica",
+        "nome": "reconciliacao_ms_max",
+        "max": 5000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "REQUISITO",
+      "dado": "fila persistente",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "metrica",
+        "nome": "eventos_nao_entregues",
+        "igual": 0
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

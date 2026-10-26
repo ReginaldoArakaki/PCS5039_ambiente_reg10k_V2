@@ -1,0 +1,64 @@
+{
+  "cenario": "G04-banheiro",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-09",
+    "CV03",
+    "CF05"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "SP sem heartbeat",
+      "quando": "passa o prazo",
+      "entao": {
+        "tipo": "alerta",
+        "comodo": "banheiro",
+        "alerta": "SP_SEM_RESPOSTA",
+        "entre_ms": [
+          57000,
+          92000
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "SP sem heartbeat",
+      "quando": "passa o prazo",
+      "entao": {
+        "tipo": "ocupacao",
+        "comodo": "banheiro",
+        "valor": "DESCONHECIDA",
+        "em_ms": 112000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "REQUISITO",
+      "dado": "ocupação desconhecida",
+      "quando": "o silêncio continua",
+      "entao": {
+        "tipo": "sem_intencao",
+        "comodo": "banheiro",
+        "acao": "APAGAR",
+        "entre_ms": [
+          52000,
+          284000
+        ]
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "cenario": "G01-banheiro",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "RNF-DES-03"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "L1",
+      "nivel": "REQUISITO",
+      "dado": "Sala escuro",
+      "quando": "alguém entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "sala",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 1
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "L2",
+      "nivel": "REQUISITO",
+      "dado": "Quarto escuro",
+      "quando": "alguém entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "quarto",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 1
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "L3",
+      "nivel": "REQUISITO",
+      "dado": "Banheiro escuro",
+      "quando": "alguém entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 1
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "D1",
+      "nivel": "REQUISITO",
+      "dado": "cômodo esvaziado",
+      "quando": "a luz apaga",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "sala",
+        "nome": "desperdicio_por_saida_s_max",
+        "max": 90.0
+      }
+    },
+    {
+      "id": "D2",
+      "nivel": "REQUISITO",
+      "dado": "cômodo esvaziado",
+      "quando": "a luz apaga",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "quarto",
+        "nome": "desperdicio_por_saida_s_max",
+        "max": 90.0
+      }
+    },
+    {
+      "id": "D3",
+      "nivel": "REQUISITO",
+      "dado": "cômodo esvaziado",
+      "quando": "a luz apaga",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "banheiro",
+        "nome": "desperdicio_por_saida_s_max",
+        "max": 330.0
+      }
+    },
+    {
+      "id": "M1",
+      "nivel": "REQUISITO",
+      "dado": "morador sempre presente em algum cômodo",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "metrica",
+        "nome": "apagamentos_indevidos",
+        "igual": 0
+      }
+    },
+    {
+      "id": "M2",
+      "nivel": "REQUISITO",
+      "dado": "entrada em cômodo escuro",
+      "quando": "a lâmpada acende",
+      "entao": {
+        "tipo": "metrica",
+        "nome": "atraso_percebido_ms_max",
+        "max": 1000
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

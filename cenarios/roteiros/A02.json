@@ -1,0 +1,85 @@
+{
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "modo": "IDEAL",
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "falhas": [],
+  "id": "A02",
+  "titulo": "Suíte: deitado no quarto, ida ao banheiro e volta",
+  "tipo": "FALSO_NEGATIVO",
+  "duracao_ms": 480000,
+  "descricao": "O morador deita no quarto, vai ao banheiro por 1 min e volta a deitar.",
+  "comportamento_ideal": "O banheiro acende ao entrar; o quarto não apaga com o morador deitado.",
+  "comportamento_referencia": "O banheiro acende pelo SA da PORTA-03; o quarto, com 60 s, apaga com o morador deitado (limitação conhecida, como o FN01).",
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "regras": [
+    "RN-V2-01",
+    "RN-V2-02",
+    "RN-I0-03"
+  ],
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 10000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 22000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        2.5,
+        6.6
+      ]
+    },
+    {
+      "t_ms": 30000,
+      "ocupante": "morador",
+      "acao": "PARADO"
+    },
+    {
+      "t_ms": 150000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "banheiro"
+    },
+    {
+      "t_ms": 162000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 50000
+    },
+    {
+      "t_ms": 215000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 227000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        2.5,
+        6.6
+      ]
+    },
+    {
+      "t_ms": 235000,
+      "ocupante": "morador",
+      "acao": "PARADO"
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "descricao": {
+    "F1": "Uso normal: entrar, sair, permanecer, interruptor",
+    "F2": "Permanência parada (falso negativo)",
+    "F3": "Passagem sem entrar e disparos espúrios (falso positivo)",
+    "F4": "Falha de dispositivo",
+    "F5": "Queda de rede, plataforma ou hub",
+    "F6": "Comando remoto e preferência",
+    "F7": "Espelho e consulta pelo app"
+  },
+  "familias": {
+    "F1": [
+      "A03",
+      "G01-banheiro",
+      "G01-cozinha",
+      "G01-quarto",
+      "G01-sala"
+    ],
+    "F2": [
+      "A01",
+      "A02",
+      "G02-banheiro",
+      "G02-cozinha",
+      "G02-quarto",
+      "G02-sala"
+    ],
+    "F3": [
+      "A04",
+      "G03-PORTA-02",
+      "G03-PORTA-03",
+      "G03-VAO-01"
+    ],
+    "F4": [
+      "G04-banheiro",
+      "G04-cozinha",
+      "G04-quarto",
+      "G04-sala"
+    ],
+    "F5": [
+      "A05",
+      "G05-casa"
+    ],
+    "F6": [
+      "G06-banheiro",
+      "G06-cozinha",
+      "G06-quarto",
+      "G06-sala"
+    ],
+    "F7": [
+      "G07-banheiro",
+      "G07-cozinha",
+      "G07-quarto",
+      "G07-sala"
+    ]
+  }
+}

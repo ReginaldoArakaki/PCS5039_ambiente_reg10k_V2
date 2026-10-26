@@ -1,0 +1,53 @@
+{
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "modo": "IDEAL",
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "falhas": [],
+  "id": "A04",
+  "titulo": "Dois cômodos acesos e só um ocupado",
+  "tipo": "FALSO_POSITIVO",
+  "duracao_ms": 300000,
+  "descricao": "O morador anda na sala e espia o quarto pela PORTA-02 sem entrar; continua na sala.",
+  "comportamento_ideal": "O quarto não acende.",
+  "comportamento_referencia": "O SA da PORTA-02 vai aos dois cômodos (RN-V1-01): o quarto acende e apaga T_apagamento depois.",
+  "requisitos": [
+    "RN09",
+    "RF-OPR-01"
+  ],
+  "regras": [
+    "RN-V1-01",
+    "RN-V2-02"
+  ],
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 10000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        1.45,
+        3.6
+      ]
+    },
+    {
+      "t_ms": 20000,
+      "ocupante": "morador",
+      "acao": "ESPIAR",
+      "comodo": "quarto"
+    },
+    {
+      "t_ms": 25000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 250000
+    }
+  ]
+}

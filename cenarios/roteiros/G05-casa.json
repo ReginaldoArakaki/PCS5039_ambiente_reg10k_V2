@@ -1,0 +1,87 @@
+{
+  "id": "G05-casa",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Desconexão de 10 min com circulação",
+  "tipo": "GEMEO_DIGITAL",
+  "modo": "IDEAL",
+  "duracao_ms": 780000,
+  "descricao": "O canal hub ↔ plataforma cai por 10 min enquanto o morador circula pela casa.",
+  "comportamento_ideal": "A automação local segue; o gêmeo remoto se declara desatualizado e reconcilia ao voltar.",
+  "comportamento_referencia": "Fila persistente; estado atual antes do histórico; reconciliação em até 5 s.",
+  "requisitos": [
+    "RF-SYN-03",
+    "RF-SYN-04",
+    "RNF-CON-01",
+    "CF06"
+  ],
+  "regras": [
+    "RN-DT-03",
+    "RN-DT-04",
+    "RN-DT-08"
+  ],
+  "familia": "F5",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 10000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 13000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 40000
+    },
+    {
+      "t_ms": 55000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "cozinha"
+    },
+    {
+      "t_ms": 67000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 200000
+    },
+    {
+      "t_ms": 269000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "sala"
+    },
+    {
+      "t_ms": 281000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 200000
+    },
+    {
+      "t_ms": 483000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        0.4
+      ]
+    },
+    {
+      "t_ms": 491000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ],
+  "falhas": [
+    {
+      "t_ms": 60000,
+      "tipo": "CANAL_DESCONECTA",
+      "duracao_ms": 600000
+    }
+  ]
+}

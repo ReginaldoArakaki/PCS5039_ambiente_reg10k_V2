@@ -1,0 +1,77 @@
+{
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "modo": "IDEAL",
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "falhas": [],
+  "id": "A03",
+  "titulo": "Travessia longa: da rua ao banheiro sem parar",
+  "tipo": "NORMAL",
+  "duracao_ms": 600000,
+  "descricao": "O morador entra e vai direto ao banheiro, passando pela sala e pelo quarto; fica 1 min e volta para a rua.",
+  "comportamento_ideal": "Cada cômodo acende ao ser atravessado e apaga depois.",
+  "comportamento_referencia": "Acende em até 1 s a cada passagem; cada cômodo apaga T_apagamento depois da última evidência.",
+  "requisitos": [
+    "RF-OPR-01",
+    "RNF-DES-03"
+  ],
+  "regras": [
+    "RN-I0-02",
+    "RN-V2-01",
+    "RN-V2-02"
+  ],
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 9000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 21000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "banheiro"
+    },
+    {
+      "t_ms": 33000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 60000
+    },
+    {
+      "t_ms": 95000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 107000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "sala"
+    },
+    {
+      "t_ms": 119000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        1.0
+      ]
+    },
+    {
+      "t_ms": 127000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ]
+}

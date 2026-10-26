@@ -1,0 +1,9 @@
+{
+  "nome": "V2",
+  "titulo": "Casa A: sala, cozinha, quarto e banheiro, com gêmeo digital e espelho",
+  "descricao": "Versão V2 da automação: a Casa A, com 4 cômodos (a residência da V1 mais quarto e banheiro em suíte), parâmetros por cômodo e cenários gerados por planta (v2dt)",
+  "ambientes": [
+    "casa-a"
+  ],
+  "nucleo_tag": "nucleo-v1.1"
+}

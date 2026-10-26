@@ -1,0 +1,68 @@
+{
+  "id": "G03-VAO-01",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Espia cozinha pela VAO-01 sem entrar",
+  "tipo": "FALSO_POSITIVO",
+  "modo": "IDEAL",
+  "duracao_ms": 185000,
+  "descricao": "O morador vai até a VAO-01, olha cozinha sem entrar e volta.",
+  "comportamento_ideal": "Cozinha não acende: ninguém entrou.",
+  "comportamento_referencia": "Limitação conhecida (RN-V1-01): o SA da passagem vai aos dois cômodos e cozinha acende.",
+  "requisitos": [
+    "RN09",
+    "RF-OPR-01"
+  ],
+  "regras": [
+    "RN-V1-01"
+  ],
+  "familia": "F3",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        4.6,
+        3.05
+      ]
+    },
+    {
+      "t_ms": 18000,
+      "ocupante": "morador",
+      "acao": "ESPIAR",
+      "comodo": "cozinha"
+    },
+    {
+      "t_ms": 23000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 60000
+    },
+    {
+      "t_ms": 85000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        0.4
+      ]
+    },
+    {
+      "t_ms": 93000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ],
+  "falhas": []
+}

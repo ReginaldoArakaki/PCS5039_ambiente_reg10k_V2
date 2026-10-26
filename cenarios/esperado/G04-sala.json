@@ -1,0 +1,64 @@
+{
+  "cenario": "G04-sala",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-09",
+    "CV03",
+    "CF05"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "SP sem heartbeat",
+      "quando": "passa o prazo",
+      "entao": {
+        "tipo": "alerta",
+        "comodo": "sala",
+        "alerta": "SP_SEM_RESPOSTA",
+        "entre_ms": [
+          33000,
+          68000
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "SP sem heartbeat",
+      "quando": "passa o prazo",
+      "entao": {
+        "tipo": "ocupacao",
+        "comodo": "sala",
+        "valor": "DESCONHECIDA",
+        "em_ms": 88000
+      }
+    },
+    {
+      "id": "A3",
+      "nivel": "REQUISITO",
+      "dado": "ocupação desconhecida",
+      "quando": "o silêncio continua",
+      "entao": {
+        "tipo": "sem_intencao",
+        "comodo": "sala",
+        "acao": "APAGAR",
+        "entre_ms": [
+          28000,
+          260000
+        ]
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

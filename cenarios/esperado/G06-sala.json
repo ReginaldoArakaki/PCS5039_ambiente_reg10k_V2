@@ -1,0 +1,49 @@
+{
+  "cenario": "G06-sala",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-03",
+    "RF-OPR-04",
+    "RNF-DES-02",
+    "CF04"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "casa vazia, sessão ativa",
+      "quando": "o titular comanda",
+      "entao": {
+        "tipo": "comando",
+        "comodo": "sala",
+        "indice": 1,
+        "nivel": "EFEITO_OBSERVADO",
+        "latencia_max_ms": 3000
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "comando aceito",
+      "quando": "o hub executa",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "sala",
+        "valor": "ACESA",
+        "desde_ms": 70000,
+        "ate_ms": 73000
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

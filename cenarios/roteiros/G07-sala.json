@@ -1,0 +1,56 @@
+{
+  "id": "G07-sala",
+  "versao": "v2dt",
+  "ambiente": "casa-a",
+  "titulo": "Rex deita em sala",
+  "tipo": "GEMEO_DIGITAL",
+  "modo": "IDEAL",
+  "duracao_ms": 310000,
+  "descricao": "O morador anda em sala; o Rex vai a sala, anda e deita.",
+  "comportamento_ideal": "O gêmeo mostra presença enquanto o Rex está lá.",
+  "comportamento_referencia": "Com o Rex parado, o PIR deixa de vê-lo: o espelho passa a afirmar vazio (erro de percepção).",
+  "requisitos": [
+    "RN-V1-04",
+    "RN34"
+  ],
+  "regras": [
+    "RN-V1-04",
+    "RN-I0-01"
+  ],
+  "familia": "F7",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "rex",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 10000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 290000
+    },
+    {
+      "t_ms": 11000,
+      "ocupante": "rex",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 60000
+    },
+    {
+      "t_ms": 73000,
+      "ocupante": "rex",
+      "acao": "PARADO"
+    }
+  ],
+  "falhas": []
+}

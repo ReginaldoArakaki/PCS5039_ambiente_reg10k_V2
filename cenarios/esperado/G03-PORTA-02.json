@@ -1,0 +1,38 @@
+{
+  "cenario": "G03-PORTA-02",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RN09",
+    "RF-OPR-01"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "L1",
+      "nivel": "REQUISITO",
+      "dado": "Sala escuro",
+      "quando": "alguém entra",
+      "entao": {
+        "tipo": "luz",
+        "comodo": "sala",
+        "valor": "ACESA",
+        "apos": {
+          "evento": "CRUZOU_PORTA",
+          "sentido": "ENTRADA",
+          "ocorrencia": 1
+        },
+        "ate_ms": 1000
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

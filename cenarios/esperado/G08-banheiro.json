@@ -1,0 +1,48 @@
+{
+  "cenario": "G08-banheiro",
+  "modo": "IDEAL",
+  "semente_referencia": 42,
+  "requisitos": [
+    "RF-OPR-01",
+    "RN34"
+  ],
+  "gerado": true,
+  "assercoes": [
+    {
+      "id": "A1",
+      "nivel": "REQUISITO",
+      "dado": "um ocupante continua no cômodo",
+      "quando": "o outro sai da casa",
+      "entao": {
+        "tipo": "luz_constante",
+        "comodo": "banheiro",
+        "valor": "ACESA",
+        "entre_ms": [
+          64000,
+          295000
+        ]
+      }
+    },
+    {
+      "id": "A2",
+      "nivel": "REQUISITO",
+      "dado": "ocupante sempre presente",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "metrica",
+        "comodo": "banheiro",
+        "nome": "apagamentos_indevidos",
+        "igual": 0
+      }
+    },
+    {
+      "id": "INV",
+      "nivel": "REQUISITO",
+      "dado": "qualquer controlador",
+      "quando": "o cenário termina",
+      "entao": {
+        "tipo": "invariantes"
+      }
+    }
+  ]
+}

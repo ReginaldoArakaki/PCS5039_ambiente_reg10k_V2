@@ -1,0 +1,83 @@
+{
+  "id": "G08-quarto",
+  "versao": "v2dtb",
+  "ambiente": "casa-a",
+  "titulo": "Um sai e outro fica em quarto",
+  "tipo": "NORMAL",
+  "modo": "IDEAL",
+  "duracao_ms": 259000,
+  "descricao": "Os dois vão até quarto; um sai da casa e o outro continua lá, andando.",
+  "comportamento_ideal": "A luz do cômodo fica acesa enquanto alguém está lá.",
+  "comportamento_referencia": "O SA da saída não apaga nada; o SP continua vendo quem ficou.",
+  "requisitos": [
+    "RF-OPR-01",
+    "RN34"
+  ],
+  "regras": [
+    "RN-I0-03",
+    "RN-I0-01"
+  ],
+  "familia": "F8",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "rex",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 11000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 23000,
+      "ocupante": "rex",
+      "acao": "MUDAR_COMODO",
+      "para": "quarto"
+    },
+    {
+      "t_ms": 35000,
+      "ocupante": "rex",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 600000
+    },
+    {
+      "t_ms": 35000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 20000
+    },
+    {
+      "t_ms": 57000,
+      "ocupante": "morador",
+      "acao": "MUDAR_COMODO",
+      "para": "sala"
+    },
+    {
+      "t_ms": 69000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        0.4
+      ]
+    },
+    {
+      "t_ms": 77000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ],
+  "falhas": []
+}

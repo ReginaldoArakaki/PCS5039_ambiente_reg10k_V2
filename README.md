@@ -9,7 +9,7 @@ fixado numa tag. Esta pasta guarda só o que é da versão:
 | Pasta | Conteúdo |
 |---|---|
 | `ambiente/` | Planta: `casa-a.json` (sala, cozinha, quarto e banheiro; banheiro com T_apagamento de 5 min) |
-| `cenarios/` | Roteiros e resultados esperados: 24 cenários gerados por planta (G*, famílias F1–F7) e 5 próprios da Casa A (A01–A05) |
+| `cenarios/` | Roteiros e resultados esperados: 32 cenários gerados por planta (G*, famílias F1–F9; F8 e F9 desde a v2dtb, núcleo nucleo-v1.3) e 5 próprios da Casa A (A01–A05) |
 | `alunos/` | Controladores dos alunos (um pacote por grupo) |
 | `experimentos/familias.json` | Famílias do protocolo de experimentos e os cenários de cada uma |
 | `dados/` | CSV dos experimentos, manifestos e assinaturas de regressão |

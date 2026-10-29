@@ -51,6 +51,18 @@
       "G07-cozinha",
       "G07-quarto",
       "G07-sala"
+    ],
+    "F8": [
+      "G08-banheiro",
+      "G08-cozinha",
+      "G08-quarto",
+      "G08-sala"
+    ],
+    "F9": [
+      "G09-banheiro",
+      "G09-cozinha",
+      "G09-quarto",
+      "G09-sala"
     ]
   }
 }

@@ -1,0 +1,72 @@
+{
+  "id": "G09-sala",
+  "versao": "v2dtb",
+  "ambiente": "casa-a",
+  "titulo": "Dorme em sala e acorda",
+  "tipo": "FALSO_NEGATIVO",
+  "modo": "IDEAL",
+  "duracao_ms": 1021000,
+  "descricao": "O morador vai até sala, dorme 10 min, acorda e sai.",
+  "comportamento_ideal": "A luz apaga com ele dormindo e acende quando ele acorda (PI-01).",
+  "comportamento_referencia": "Apaga T_apagamento (60 s) depois de ele adormecer; acende no primeiro movimento.",
+  "requisitos": [
+    "RF-OPR-01",
+    "CF05"
+  ],
+  "regras": [
+    "RN-I0-03"
+  ],
+  "familia": "F9",
+  "gerado": true,
+  "estado_inicial": {
+    "ocupantes_na_sala": [],
+    "luz": "APAGADA"
+  },
+  "acoes": [
+    {
+      "t_ms": 5000,
+      "ocupante": "morador",
+      "acao": "ENTRAR"
+    },
+    {
+      "t_ms": 8000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        2.5,
+        2.0
+      ]
+    },
+    {
+      "t_ms": 16000,
+      "ocupante": "morador",
+      "acao": "DORMIR"
+    },
+    {
+      "t_ms": 616000,
+      "ocupante": "morador",
+      "acao": "ACORDAR"
+    },
+    {
+      "t_ms": 619000,
+      "ocupante": "morador",
+      "acao": "ANDAR_ALEATORIO",
+      "duracao_ms": 30000
+    },
+    {
+      "t_ms": 651000,
+      "ocupante": "morador",
+      "acao": "ANDAR",
+      "ate": [
+        0.95,
+        0.4
+      ]
+    },
+    {
+      "t_ms": 659000,
+      "ocupante": "morador",
+      "acao": "SAIR"
+    }
+  ],
+  "falhas": []
+}

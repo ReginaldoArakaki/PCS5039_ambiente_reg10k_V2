@@ -1,0 +1,281 @@
+{
+  "gerado_em": "2026-10-29T18:59:15",
+  "comando": "/home/claude/pcs5039_ambiente_reg10k_v2/nucleo/experimentos/__main__.py --sementes 30 --controladores referencia alunos.grupo_exemplo --processos 4 --saida dados/experimentos-V2-20261029-v13.csv",
+  "versao": {
+    "nome": "V2",
+    "titulo": "Casa A: sala, cozinha, quarto e banheiro, com gêmeo digital e espelho",
+    "descricao": "Versão V2 da automação: a Casa A, com 4 cômodos (a residência da V1 mais quarto e banheiro em suíte), parâmetros por cômodo e cenários gerados por planta (v2dt)",
+    "ambientes": [
+      "casa-a"
+    ],
+    "nucleo_tag": "nucleo-v1.3",
+    "nucleo": "nucleo-v1.3"
+  },
+  "nucleo": {
+    "nome": "nucleo-v1.3",
+    "commit": "7077d3c8569de1cecd2d4f38418dac2fb9989d98",
+    "descricao_git": "nucleo-v1.3"
+  },
+  "repositorio_versao": {
+    "commit": "17578ddd33716692d99e745e5a4ee4f9ea88cdb3",
+    "descricao_git": "v2dta-dirty"
+  },
+  "python": "3.13.16",
+  "sementes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "modos": [
+    "CENARIO"
+  ],
+  "controladores": [
+    "referencia",
+    "alunos.grupo_exemplo"
+  ],
+  "familias": {
+    "F1": {
+      "nome": "Uso normal: entrar, sair, permanecer, interruptor",
+      "cenarios": [
+        "A03",
+        "G01-banheiro",
+        "G01-cozinha",
+        "G01-quarto",
+        "G01-sala"
+      ]
+    },
+    "F2": {
+      "nome": "Permanência parada (falso negativo)",
+      "cenarios": [
+        "A01",
+        "A02",
+        "G02-banheiro",
+        "G02-cozinha",
+        "G02-quarto",
+        "G02-sala"
+      ]
+    },
+    "F3": {
+      "nome": "Passagem sem entrar e disparos espúrios (falso positivo)",
+      "cenarios": [
+        "A04",
+        "G03-PORTA-02",
+        "G03-PORTA-03",
+        "G03-VAO-01"
+      ]
+    },
+    "F4": {
+      "nome": "Falha de dispositivo",
+      "cenarios": [
+        "G04-banheiro",
+        "G04-cozinha",
+        "G04-quarto",
+        "G04-sala"
+      ]
+    },
+    "F5": {
+      "nome": "Queda de rede, plataforma ou hub",
+      "cenarios": [
+        "A05",
+        "G05-casa"
+      ]
+    },
+    "F6": {
+      "nome": "Comando remoto e preferência",
+      "cenarios": [
+        "G06-banheiro",
+        "G06-cozinha",
+        "G06-quarto",
+        "G06-sala"
+      ]
+    },
+    "F7": {
+      "nome": "Espelho e consulta pelo app",
+      "cenarios": [
+        "G07-banheiro",
+        "G07-cozinha",
+        "G07-quarto",
+        "G07-sala"
+      ]
+    },
+    "F8": {
+      "nome": "Ocupação múltipla: um sai e outro fica",
+      "cenarios": [
+        "G08-banheiro",
+        "G08-cozinha",
+        "G08-quarto",
+        "G08-sala"
+      ]
+    },
+    "F9": {
+      "nome": "Ocupante dormindo (PI-01)",
+      "cenarios": [
+        "G09-banheiro",
+        "G09-cozinha",
+        "G09-quarto",
+        "G09-sala"
+      ]
+    }
+  },
+  "n_execucoes": 2220,
+  "observacoes": [
+    "OR-12 (execução pareada sem falha de rede) não é calculada nos experimentos.",
+    "modo CENARIO = o modo declarado em cada roteiro."
+  ],
+  "csv": {
+    "arquivo": "experimentos-V2-20261029-v13.csv",
+    "sha256": "30d041c5f436085f14e74b447b7ac42f53ac8b82078f7417df59753320392121",
+    "colunas": [
+      "versao",
+      "nucleo",
+      "ambiente",
+      "n_comodos",
+      "n_moradores",
+      "familia",
+      "cenario",
+      "tipo",
+      "controlador",
+      "semente",
+      "modo",
+      "modo_rede",
+      "requisitos_ok",
+      "invariantes_ok",
+      "n_eventos",
+      "desperdicio_s",
+      "escuro_com_ocupante_s",
+      "apagamentos_indevidos",
+      "acionamentos",
+      "latencia_reacao_ms_p95",
+      "latencia_reacao_ms_max",
+      "atraso_percebido_ms_max",
+      "desperdicio_por_saida_s_max",
+      "ocupacao_desconhecida_s",
+      "tempo_ocupada_s",
+      "tempo_luz_acesa_s",
+      "atualidade_gemeo_ms_p95",
+      "gemeo_nao_atual_s",
+      "comando_remoto_ms_p95",
+      "comandos_remotos",
+      "comandos_vencidos_executados",
+      "efeitos_duplicados_remotos",
+      "reconciliacao_ms_max",
+      "divergencia_alem_prazo_s",
+      "eventos_nao_entregues",
+      "fila_max",
+      "espelho_fiel_pct",
+      "espelho_fiel_s",
+      "erro_de_percepcao_s",
+      "erro_de_sincronizacao_s",
+      "espelho_nao_afirma_s",
+      "luz_com_todos_dormindo_s",
+      "suspeitas_abertas",
+      "suspeitas_confirmadas",
+      "suspeitas_conciliadas"
+    ]
+  },
+  "entradas_sha256": {
+    "cenarios/roteiros/A01.json": "82d4f4ed150b9261c1a9452d74da2337b89a9a4e71ec1a03ea26244ef2e99cce",
+    "cenarios/esperado/A01.json": "f2d3b65c19a94c6f78c293e6352ad5b857c6313bb11f0d990d1ece4bd8f3a5ff",
+    "cenarios/roteiros/A02.json": "34f1f1d7da8face6bd7b008ab3fdbb2ab24905d429d1942241aefd73e0a8fe83",
+    "cenarios/esperado/A02.json": "df39c762e007524bc9de35d45c3426d4c87bff03bd58d4cc85359bd4604c680a",
+    "cenarios/roteiros/A03.json": "04542d416857e060cba4acef85e9cb3152d6454052dd480f4d4e6eb21c98914a",
+    "cenarios/esperado/A03.json": "6f45f44feaba75c8c12884aea5b9c7088d2ffe712b042085e6d2c0d6ba629739",
+    "cenarios/roteiros/A04.json": "56d6e8a60f92a92cabacc0a27b3b6c6ed0c988d986227887da665a81c6baba46",
+    "cenarios/esperado/A04.json": "45a300acd04e4b1306f7d937def98f6ec8800c442a654e44cfc6a5e87f22b4f9",
+    "cenarios/roteiros/A05.json": "876cce33a6dade8ebaadab024c9090643e0963470b083cc926e469d670d1c228",
+    "cenarios/esperado/A05.json": "41e75038d6e7081822e83c7ffa2fc6cba7d5385ee6a0f173cbb137f5a0ac57be",
+    "cenarios/roteiros/G01-banheiro.json": "3c73309cbc3b81dc0709422f32e67fa62e4e539fac4d83e03d63a8894a9a2993",
+    "cenarios/esperado/G01-banheiro.json": "955da1be0edc6780d9bc7ff1f14ef6cdb87ab78b21956fb57f02436ab84ff2e2",
+    "cenarios/roteiros/G01-cozinha.json": "1eb7fa916de372e2c13235bffad0a0892df885871c1c15cf043031b9a777d693",
+    "cenarios/esperado/G01-cozinha.json": "26453fda4aa9fda27ee6b96d4a2b7cbad4abe930eb6a7290f24975668dbca0e8",
+    "cenarios/roteiros/G01-quarto.json": "93012f59ee6d964fd93d2e60d3c530ba80fc3f24d810babf4fc6412efa445265",
+    "cenarios/esperado/G01-quarto.json": "fb7422c0fbb52acf08313b9ddf831ff35b4bb7101e35fbebf7d82fee86396fbc",
+    "cenarios/roteiros/G01-sala.json": "402c8e415b921baed6a0d386be0fd83c6e07fa672ecd45bf3b175a06a746b752",
+    "cenarios/esperado/G01-sala.json": "00e96d240c2b30eb040f48f16ce04afcf9694f61a41c1fec6108bd546f1f8510",
+    "cenarios/roteiros/G02-banheiro.json": "dcd32afbd378cd504533265f69fafe4ee1b4af650043593042163aee267f6089",
+    "cenarios/esperado/G02-banheiro.json": "91822b1f487a14db6954e29365732024f83a846127ae3b1ee4d22090682389a9",
+    "cenarios/roteiros/G02-cozinha.json": "431bcdc79e16bc8b7db82b294b9eaa1c3392869b8513e5054429fc28b10e091a",
+    "cenarios/esperado/G02-cozinha.json": "40c8b4f8ae4bdfbf6b3d6de894588a2508e039a7e2bb45bcb91c097f4da50c5c",
+    "cenarios/roteiros/G02-quarto.json": "e0455c878d3b92c5e623a603ae9f202e4000bc2f1ddb2a74c5e8cfb747e8bb20",
+    "cenarios/esperado/G02-quarto.json": "06122619223ac716a339f0acb8b55ddd9f8d44f1a68e95ca38dfba7f9ecb9738",
+    "cenarios/roteiros/G02-sala.json": "c600d845719d0680d9c874dc2f465dbb3e884eece6cf16ca93c8871dd5bbde3f",
+    "cenarios/esperado/G02-sala.json": "413e398c514959b37331573e3c293c4953d35b6ba495863a431fdf358da3040e",
+    "cenarios/roteiros/G03-PORTA-02.json": "3571e9e761e587173f331a7275ff10943bc0122856c062d12e07b84bea16d0c6",
+    "cenarios/esperado/G03-PORTA-02.json": "7ece50fa7561e194db57926a49807e598d1a7638af65804946000c111ff9d86d",
+    "cenarios/roteiros/G03-PORTA-03.json": "dab2677c5708dbee44cd62807692ce3519a45071c84d46cc883a4d9c03a1b057",
+    "cenarios/esperado/G03-PORTA-03.json": "9f9a5a21dda88b410addc0f3cf5217e997d2f30719d4d28786e3631e4866a36a",
+    "cenarios/roteiros/G03-VAO-01.json": "8198e11edf68e3e01f74edb9b1f11a3fbc0f997107f7c248af98404f640854b7",
+    "cenarios/esperado/G03-VAO-01.json": "42df29f53f102f23ff0db195cb4ec85eb1f38b205d01ec76bab8a6c8f04200af",
+    "cenarios/roteiros/G04-banheiro.json": "61a5e5c5f8085f71759f288319b19646c50709e29adba7d6e69e5dc281611193",
+    "cenarios/esperado/G04-banheiro.json": "c9a48264f1debd8d1dcdd092f1fcc6e450e538d547f785de85360c9831530605",
+    "cenarios/roteiros/G04-cozinha.json": "9745993b487fc6f59f49a230a70bbe8499a3edb2ec7de6845629d65238093ea6",
+    "cenarios/esperado/G04-cozinha.json": "22f18a4cac244fa18534226076e55271eb2f7d4dd2fab522fab0099693d4ecb1",
+    "cenarios/roteiros/G04-quarto.json": "5568bc1b6546917f36080b462ffceca68b4cd1b861bb08a4b810cf78189d96fc",
+    "cenarios/esperado/G04-quarto.json": "6664cd5249e0d65a09ece29948499580377eb73eb571478dee5dad11b7db11a0",
+    "cenarios/roteiros/G04-sala.json": "e82778d08bf456fe8329fdfe222dd57329fe9e0c08e1503fe35d48583075b049",
+    "cenarios/esperado/G04-sala.json": "ed07db4e346d5d25a05356c81a1300a95a8d8eda1f887e8caf8752f323bee4b9",
+    "cenarios/roteiros/G05-casa.json": "7d88927709b79f3bc5247c0718d0ee8a2183286473b6ee81c77551aa3c193fb8",
+    "cenarios/esperado/G05-casa.json": "bad32fe8cd69dd7104cfcf322fae1d5bc87362c7bf0b7827cb667d47e9a969f7",
+    "cenarios/roteiros/G06-banheiro.json": "6f4eaa1e8c38753af2a127ee95b41dc39072ddce897050335b512f87cdc4c140",
+    "cenarios/esperado/G06-banheiro.json": "56ed35d6fa66f064943d60fb0785f768578ff750a377768fc721faafea81b3b6",
+    "cenarios/roteiros/G06-cozinha.json": "0ab451ed344c94d36384784fb360da95e71d55ba63627f55ce1be4d541f55b86",
+    "cenarios/esperado/G06-cozinha.json": "788629538e37e0024bae1543f823914d614ea5c4961df36ce8167d626effc12d",
+    "cenarios/roteiros/G06-quarto.json": "a567617d5309648043faa3893c0e222aafd198a1e8a7f94e6cd38c17595a413a",
+    "cenarios/esperado/G06-quarto.json": "257b5a75664f02cd09d1fb0646c7e826c7eb60626b8ce61e0cbd9d2a59c922df",
+    "cenarios/roteiros/G06-sala.json": "9dce52d5d67e7b4c168372456ef54da6a78efb505356e512a4e0f4e1e37d6e53",
+    "cenarios/esperado/G06-sala.json": "59debacb377b328d7621dccc14e85d32f26eab2b5df4aff0367586cc77e30120",
+    "cenarios/roteiros/G07-banheiro.json": "bfccdb44fcae69e6db194e0f481bfee32998467e1482c606987417c20c889f45",
+    "cenarios/esperado/G07-banheiro.json": "3689aa65f7b9c29d67c8889c63f2d8189dd3b186ea5835b71d697a75c2d0bf76",
+    "cenarios/roteiros/G07-cozinha.json": "82f4c068f1c088abfb570a42f9eb4b27652842a529c4cd7315df18385640dfc6",
+    "cenarios/esperado/G07-cozinha.json": "fbcf3163592b2ff124f3bbcae337747cec890f65d2746a09b10b8e46276f1cd8",
+    "cenarios/roteiros/G07-quarto.json": "b869956cbeebe4157c92c0415afdc25ba79ad54f756ae7bff2e6ee6f7e7cae1d",
+    "cenarios/esperado/G07-quarto.json": "4900d9df866a994eb71830fd4806a2500ddc86c1ee31873d6fc7ad6cf705aca4",
+    "cenarios/roteiros/G07-sala.json": "63dd36a80203d3c064a01080ceab637a0fd9e5c9fc911a2826198b0ad81e752b",
+    "cenarios/esperado/G07-sala.json": "101d5eea472f4e90089bceeead2302492194393955cee57673cb0b2fc84138a3",
+    "cenarios/roteiros/G08-banheiro.json": "044375514d5d242877152e6d8cdd0d05cdd35cc0ccc5399f91c84e46867d0aef",
+    "cenarios/esperado/G08-banheiro.json": "5694eeea19ab5a082899f03c5d3970196d4eda58fe73654808592e64717f3916",
+    "cenarios/roteiros/G08-cozinha.json": "5112d6185d3aa2c2dbf7b9375044345fb1172eb24835e224850e6f24f5cc5055",
+    "cenarios/esperado/G08-cozinha.json": "38666f9b79933c6f69969399bb630478d16cbf18a81e62d057c4a009638407fe",
+    "cenarios/roteiros/G08-quarto.json": "e8641d698d40aa65febc61dfae43c1328f33404e59dc6fe6ed6511eb16a1f2cf",
+    "cenarios/esperado/G08-quarto.json": "0966c2be18e6d4a9468e33996fe2e223df3386a639ab494e3bc111a251c42f7c",
+    "cenarios/roteiros/G08-sala.json": "71d568401e8777ebbc12d99a70b3a5956fc075863afd5285ad1dd1262d6599f7",
+    "cenarios/esperado/G08-sala.json": "b8354e7ca43b48d4ecd56915085ab9019c1d07e34ae5c089410a761c6e1243e3",
+    "cenarios/roteiros/G09-banheiro.json": "4541a3e8f2e831afa198407de574d95fa67a21ea720592057cbeb032611b146d",
+    "cenarios/esperado/G09-banheiro.json": "ea9248ee9ee84c48d422e691bdff9b28997d3fadfcb10459f2334144156c6076",
+    "cenarios/roteiros/G09-cozinha.json": "787559ebd16a32979f8c7a8725825bc9ab950ce0ee699f92877454ec138edd33",
+    "cenarios/esperado/G09-cozinha.json": "c9c8149ba37f3fa52ce3727b66f797aaa4a18416417c4e836666b2c5b9cc3afb",
+    "cenarios/roteiros/G09-quarto.json": "85ed1fe1cec19fdfa5cca6e808f142e39101cbb968617a61028918157b13e5ea",
+    "cenarios/esperado/G09-quarto.json": "d45c8d89d521cafe721fc0331e378f4113c2581814bc9995e7517a72849e2200",
+    "cenarios/roteiros/G09-sala.json": "a5413c82856eb31526c85f1691a0abc88e627d87694854723b2c4d03edc1c49c",
+    "cenarios/esperado/G09-sala.json": "53ebb33c2d2b313750f2071629beaae399e0d9b7fb930ab9956e02283f995cc7",
+    "ambiente/casa-a.json": "d262473eb3f1d11748e05b1fd2faebde405a2f091e230f3b1996118bef394569"
+  },
+  "ressalva": "Resultados de simulação, não de medição (P7): valem para o modelo e os parâmetros declarados."
+}
